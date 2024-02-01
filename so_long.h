@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/01 15:32:39 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:40:02 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 // #define WHITE_PIXEL 0xFFFFFF
 
 # include "./mlx/mlx.h"
-# include "./mlx/mlx_int.h"
 # include "./get_next_line/get_next_line.h"
 
 // void	*mlx_init();
