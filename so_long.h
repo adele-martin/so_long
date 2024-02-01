@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/01/24 18:37:42 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:32:39 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 // #define GREEN_PIXEL 0xFF00
 // #define WHITE_PIXEL 0xFFFFFF
 
-# include "./minilibx-linux/mlx.h"
-# include "./minilibx-linux/mlx_int.h"
+# include "./mlx/mlx.h"
+# include "./mlx/mlx_int.h"
 # include "./get_next_line/get_next_line.h"
 
 // void	*mlx_init();
