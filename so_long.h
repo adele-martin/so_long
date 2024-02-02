@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/01 16:40:02 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:10:39 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,23 @@
 
 # include "./mlx/mlx.h"
 # include "./get_next_line/get_next_line.h"
+# include "./ft_printf/include/ft_printf.h"
 
-// void	*mlx_init();
-// void	*mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);
-// int	mlx_loop (void *mlx_ptr);
+# define FILE_MSG "Error\nIncorrect number of parameters, only 2 are accepted.\n"
+# define FILE_EXT_MSG "Error\nFile has invalid file extension\n"
+# define EMPTY_MSG "Error\nMap is empty\n"
+# define RECT_MSG "Error\nMap is not rectangle.\n"
+# define WRONG_MSG "Error\nMap have the wrongs components\n"
+# define WALL_MSG "Error\nMap don't have close walls\n"
+# define MIN_TILES_MSG "Error\nYou don't have the correct components\n"
+# define PATH_MSG "Error\nThere is not a valid path\n"
+
+typedef struct t_game
+{
+	int fd;
+	int exit_count;
+	int collectables_count;
+	int starting_position_count;
+};
 
 #endif
