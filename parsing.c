@@ -6,14 +6,16 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:53:18 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/05 14:29:48 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:28:18 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int check_map (char *map, t_game **argv)
+int check_line (char *map, t_game **argv)
 {
+
+
 
 }
 
@@ -35,14 +37,3 @@ int	read_map(t_complete *game, char **argv)
 	return (1);
 }
 
-int	read_map(char *map)
-{
-	int fd;
-
-	fd = open(map, O_RDWR);
-	if (fd == -1)
-	{
-		ft_printf("Error! Please enter a valid file.");
-		return (1);
-	}
-}

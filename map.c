@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 13:53:10 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/05 15:19:57 by ademarti         ###   ########.fr       */
+/*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
+/*   Updated: 2024/02/05 15:26:45 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int	read_map(char *map, t_game *game)
 {
-	if (argc == 2)
-	{
-		read_map(argv[1]);
-	}
-	else
-	{
-		ft_printf("Error! Please only input a map description file as parameter.");
-	}
+	int	fd;
+	char	*line;
 
+	fd = open(map, O_RDWR);
+	if (fd == -1)
+	{
+		ft_printf("Error! Please enter a valid map file.");
+		return (1);
+	}
+	while (1)
+	{
+		line = get_next_line(fd);
+	}
+	close(fd);
 	return (0);
 }
