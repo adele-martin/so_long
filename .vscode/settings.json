@@ -4,6 +4,7 @@
 		"mlx_int.h": "c",
 		"get_next_line.h": "c",
 		"stdio.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"so_long.h": "c"
 	}
 }
