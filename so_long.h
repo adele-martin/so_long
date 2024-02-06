@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/05 15:27:04 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:15:51 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@
 # define MIN_TILES_MSG "Error\nYou don't have the correct components\n"
 # define PATH_MSG "Error\nThere is not a valid path\n"
 
-int	read_map(char *map);
-
-typedef struct t_game t_game
+typedef struct s_game
 {
 	int fd;
-	int exit_count;
-	int collectables_count;
-	int starting_position_count;
-};
+	// int exit_count;
+	// int collectables_count;
+	// int starting_position_count;
+} t_game;
+
+int	read_map(t_game *game, char *map);
 
 #endif
