@@ -6,7 +6,7 @@
 #    By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 16:48:33 by ademarti          #+#    #+#              #
-#    Updated: 2024/02/05 17:47:34 by ademarti         ###   ########.fr        #
+#    Updated: 2024/02/12 16:16:59 by ademarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ $(NAME): $(OBJS)
 	git clone https://github.com/42Paris/minilibx-linux.git mlx; \
 	fi
 	@make -C $(MLX_LIB)
-	$(CC) $(CFLAGS) $(OBJS) $(GETNEXTLINE) $(FT_PRINTF) $(MLX_FLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(GETNEXTLINE) $(LIBFT) $(FT_PRINTF) $(MLX_FLAGS) -o $(NAME)
 clean:
 	rm -rf $(OBJS)
 fclean: clean
