@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/12 18:17:52 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:11:10 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,33 @@ char **allocate_mem(t_game *game, char *map)
 	new_map = (char **)malloc(sizeof(char *) * map_lines);
 	if (!new_map)
 		return NULL;
-	ft_printf("%d", map_lines);
 	return (new_map);
 }
 
 char **read_map(t_game *game, char *map)
 {
 	int i;
+	char **new_map;
+	char *line;
 
 	i = 0;
-	char **new_map;
 	new_map = allocate_mem(game, map);
 	game->fd = open(map, O_RDWR);
 	if (game->fd == -1)
 	{
 		ft_printf("Error! Please enter a valid map file.");
 	}
-	// new_map[i] = get_next_line(game->fd);
-	//What is actually being printed in my new_line variable?
-	while (new_map[i])
-		new_map[i++] = get_next_line(game->fd);
-	ft_printf("%s", new_map);
+	while ((line = get_next_line(game->fd)) != NULL)
+	{
+		new_map[i++] = line;
+	}
+	ft_printf("%s", new_map[0]);
+	ft_printf("%s", new_map[1]);
+	ft_printf("%s", new_map[2]);
+	ft_printf("%s", new_map[3]);
+	ft_printf("%s", new_map[4]);
+	ft_printf("%s", new_map[5]);
+	ft_printf("%s", new_map[6]);
 	close(game->fd);
 	return (new_map);
 }
