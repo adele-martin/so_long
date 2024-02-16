@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/12 18:14:48 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:47:24 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_game
 	// int starting_position_count;
 } t_game;
 
-char **read_map(t_game *game, char *map);
+char	**read_map(t_game *game, char *map);
+int	count_map_lines(t_game *game, char *map);
+void	free_map(char **new_map, int map_lines);
 
 #endif
