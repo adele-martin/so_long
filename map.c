@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/16 14:06:01 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:26:18 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,37 +23,35 @@ int	count_map_lines(t_game *game, char *map)
 	return (map_lines);
 }
 
-char	**allocate_mem(int map_lines)
+char	**allocate_mem(t_game *game, int map_lines)
 {
-	char	**new_map;
 
-	new_map = (char **)malloc(sizeof(char *) * map_lines);
-	if (!new_map)
+	game->map = (char **)malloc(sizeof(char *) * map_lines);
+	if (!game->map)
 		return (NULL);
-	return (new_map);
+	return (game->map);
 }
 
-void	free_map(char **new_map, int map_lines)
+void	free_map(t_game *game, int map_lines)
 {
 	int	i;
 
 	i = 0;
 	while (i < map_lines)
 	{
-		free(new_map[i]);
+		free(game->map[i]);
 	}
 }
 
 char	**read_map(t_game *game, char *map)
 {
 	int		i;
-	char	**new_map;
 	char	*line;
 	int map_lines;
 
 	i = 0;
 	map_lines = count_map_lines(game, map);
-	new_map = allocate_mem(map_lines);
+	game->map = allocate_mem(game, map_lines);
 	game->fd = open(map, O_RDWR);
 	if (game->fd == -1)
 	{
@@ -64,8 +62,8 @@ char	**read_map(t_game *game, char *map)
 		line = get_next_line(game->fd);
 		if (line == NULL)
 			break ;
-		new_map[i++] = line;
+		game->map[i++] = line;
 	}
 	close(game->fd);
-	return (new_map);
+	return (game->map);
 }
