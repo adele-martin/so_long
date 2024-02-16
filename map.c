@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/16 14:26:18 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:45:18 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	free_map(t_game *game, int map_lines)
 	while (i < map_lines)
 	{
 		free(game->map[i]);
+		i++;
 	}
 }
 

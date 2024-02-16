@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/16 14:20:50 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:40:13 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ typedef struct s_game
 char	**read_map(t_game *game, char *map);
 int	count_map_lines(t_game *game, char *map);
 void	free_map(t_game *game, int map_lines);
+int check_chars(t_game *game);
 
 #endif
