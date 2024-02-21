@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:53:10 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/16 15:46:25 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/21 10:20:52 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	}
 	else
 		ft_printf("Error! Please only input a map description file as parameter.");
-	// check_chars(&game);
+	check_chars(&game);
 	free_map(&game, map_lines);
 	return (0);
 }

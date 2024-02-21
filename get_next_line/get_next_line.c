@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:57:39 by ademarti          #+#    #+#             */
-/*   Updated: 2024/01/16 19:15:32 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/21 09:59:33 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	*remove_line(char *stash, char *line)
 	if (!temp)
 	{
 		free(stash);
+		stash = NULL;
 		return (NULL);
 	}
 	j = 0;
