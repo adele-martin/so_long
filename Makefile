@@ -6,13 +6,13 @@
 #    By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 16:48:33 by ademarti          #+#    #+#              #
-#    Updated: 2024/02/21 10:56:33 by ademarti         ###   ########.fr        #
+#    Updated: 2024/02/22 16:09:22 by ademarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CFLAGS = -g -Wextra -Wall -Werror
-SRC = main.c map.c parsing.c
+SRC = main.c map.c
 GETNEXTLINE := get_next_line/*c
 FT_PRINTF := ft_printf/*c
 SANITIZER = -fsanitize=address
