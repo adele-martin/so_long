@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:53:38 by ademarti          #+#    #+#             */
-/*   Updated: 2024/01/16 19:13:46 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:02:55 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*put_in_stash(int fd, char *buffer, char *stash);
 char	*remove_line(char *stash, char *line);
 char	*get_next_line(int fd);
 char	*make_line(char *stash);
-size_t	ft_strlen(const char *s);
+int	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);

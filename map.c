@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/16 15:45:18 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:03:35 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,12 @@ void	free_map(t_game *game, int map_lines)
 char	**read_map(t_game *game, char *map)
 {
 	int		i;
+	int line_length;
 	char	*line;
 	int map_lines;
 
 	i = 0;
+	line_length = 1;
 	map_lines = count_map_lines(game, map);
 	game->map = allocate_mem(game, map_lines);
 	game->fd = open(map, O_RDWR);
@@ -63,6 +65,16 @@ char	**read_map(t_game *game, char *map)
 		line = get_next_line(game->fd);
 		if (line == NULL)
 			break ;
+		if (line_length == 0.5)
+        	line_length = ft_strlen(line);
+		else
+		{
+			if (ft_strlen(line) != line_length)
+			{
+				ft_printf("error");
+				break;
+			}
+		}
 		game->map[i++] = line;
 	}
 	close(game->fd);
