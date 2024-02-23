@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/22 16:44:04 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/23 12:01:15 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ char	**read_map(t_game *game, char *map)
 	int line_length;
 	char	*line;
 	int map_lines;
-	int len;
-	len = 0;
 	i = 0;
 	line_length = -1;
 	map_lines = count_map_lines(game, map);
@@ -66,16 +64,21 @@ char	**read_map(t_game *game, char *map)
 		line = get_next_line(game->fd);
 		if (line == NULL)
 			break;
-		int len = ft_strlen(line);
-		ft_printf("%d", len);
+		ft_printf("%d", ft_strlen(line));
 		if (line_length == -1)
 		{
-			line_length = len;
+			line_length = ft_strlen(line);
 		}
-		else if (len != line_length)
+		else if (ft_strlen(line) != line_length)
 		{
-			ft_printf("Error. The map does not form a rectangle.");
-			break;
+			line = get_next_line(game->fd);
+			if (ft_strlen(line) == 0)
+				break;
+			else
+			{
+				ft_printf("Error. The map does not form a rectangle.");
+				break;
+			}
 		}
 		game->map[i++] = line;
 	}
