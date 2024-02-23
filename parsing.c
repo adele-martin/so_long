@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:53:18 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/22 16:10:56 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:21:55 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int check_characters(t_game *game)
 	}
 	return 0;
 }
+
 
 // Check if all lines are of same len
 // int check_rectangle()

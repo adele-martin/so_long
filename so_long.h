@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 17:19:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/21 13:58:54 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/23 13:29:51 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ char	**read_map(t_game *game, char *map);
 int	count_map_lines(t_game *game, char *map);
 void	free_map(t_game *game, int map_lines);
 int check_characters(t_game *game);
+void check_rectangle(t_game *game, char *map);
 
 #endif

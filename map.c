@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 15:11:04 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/23 12:01:15 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:40:11 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,31 +44,20 @@ void	free_map(t_game *game, int map_lines)
 	}
 }
 
-char	**read_map(t_game *game, char *map)
+void check_rectangle(t_game *game, char *map)
 {
-	int		i;
-	int line_length;
-	char	*line;
-	int map_lines;
-	i = 0;
+	int		line_length;
+
 	line_length = -1;
-	map_lines = count_map_lines(game, map);
-	game->map = allocate_mem(game, map_lines);
+	char	*line;
 	game->fd = open(map, O_RDWR);
-	if (game->fd == -1)
-	{
-		ft_printf("Error! Please enter a valid map file.");
-	}
 	while (1)
 	{
 		line = get_next_line(game->fd);
 		if (line == NULL)
 			break;
-		ft_printf("%d", ft_strlen(line));
 		if (line_length == -1)
-		{
 			line_length = ft_strlen(line);
-		}
 		else if (ft_strlen(line) != line_length)
 		{
 			line = get_next_line(game->fd);
@@ -79,9 +68,44 @@ char	**read_map(t_game *game, char *map)
 				ft_printf("Error. The map does not form a rectangle.");
 				break;
 			}
+	}
+	}
+	free(line);
+	close(game->fd);
+}
+
+char	**read_map(t_game *game, char *map)
+{
+	int		i;
+	char	*line;
+	int		map_lines;
+	int checker;
+
+	checker = -1;
+
+	i = 0;
+	map_lines = count_map_lines(game, map);
+	game->map = allocate_mem(game, map_lines);
+	game->fd = open(map, O_RDWR);
+	if (game->fd == -1)
+	{
+		ft_printf("Error! Please enter a valid map file.");
+	}
+	while (1)
+	{
+		line = get_next_line(game->fd);
+		if (checker == -1)
+		{
+			if (line == NULL)
+			{
+			ft_printf("Error! Please enter a valid map file.");
+			break;
+			}
 		}
 		game->map[i++] = line;
+		checker++;
 	}
 	close(game->fd);
-	return game->map;
+	free(line);
+	return (game->map);
 }
