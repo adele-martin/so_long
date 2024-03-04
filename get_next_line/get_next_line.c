@@ -6,9 +6,10 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 16:57:39 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/23 14:34:04 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:25:51 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "get_next_line.h"
 
@@ -38,6 +39,8 @@ char	*put_in_stash(int fd, char *buffer, char *stash)
 		if (ft_strchr(stash, '\n'))
 			break ;
 	}
+	free(buffer);
+	buffer = NULL;
 	return (stash);
 }
 
@@ -79,6 +82,7 @@ char	*remove_line(char *stash, char *line)
 	if (!temp)
 	{
 		free(stash);
+		stash = NULL;
 		return (NULL);
 	}
 	j = 0;
@@ -114,8 +118,6 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	new_stash = put_in_stash(fd, buffer, stash);
-	free(buffer);
-	buffer = NULL;
 	if (!new_stash)
 		return (NULL);
 	line = make_line(new_stash);
@@ -145,5 +147,6 @@ char	*get_next_line(int fd)
 // 	// result = get_next_line(fd);
 // 	// printf("%s", result);
 // 	// free(result);
+
 // 	close(fd);
 // }

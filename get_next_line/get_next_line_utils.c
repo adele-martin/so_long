@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 17:30:58 by ademarti          #+#    #+#             */
-/*   Updated: 2024/02/22 14:02:44 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:07:07 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (size);
 }
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (!s)
@@ -89,7 +89,7 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*newstring;
 	size_t	len_s1_s2;
@@ -99,6 +99,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s1_s2 = ft_strlen(s1) + ft_strlen(s2);
 	i = 0;
 	j = 0;
+	if (!s1)
+	{
+		 s1 = (char *)malloc(1 * sizeof(char));
+        s1[0] = '\0';
+	}
 	if (!s1 || !s2)
 		return (NULL);
 	newstring = (char *)malloc(sizeof(char) * (len_s1_s2 + 1));
